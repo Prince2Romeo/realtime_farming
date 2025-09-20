@@ -355,10 +355,79 @@ AUTH_HTML = """
         background: rgba(255, 255, 255, 0.05);
         color: #dce3e8;
       }
+      
+      /* Mobile responsiveness for auth page */
+      @media (max-width: 768px) {
+        .auth-card {
+          margin: 1rem;
+          padding: 1.5rem !important;
+        }
+        
+        .auth-card h2 {
+          font-size: 1.5rem;
+        }
+        
+        .auth-card .fs-1 {
+          font-size: 2.5rem !important;
+        }
+        
+        .form-control {
+          padding: 0.75rem;
+          font-size: 1rem;
+        }
+        
+        .btn {
+          padding: 0.75rem 1rem;
+          font-size: 1rem;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        body {
+          padding: 0.5rem;
+        }
+        
+        .auth-card {
+          margin: 0.5rem;
+          padding: 1rem !important;
+        }
+        
+        .auth-card h2 {
+          font-size: 1.25rem;
+        }
+        
+        .auth-card p {
+          font-size: 0.9rem;
+        }
+        
+        .auth-card .fs-1 {
+          font-size: 2rem !important;
+        }
+        
+        .form-label {
+          font-size: 0.9rem;
+        }
+        
+        .form-control {
+          padding: 0.6rem;
+          font-size: 0.9rem;
+        }
+        
+        .btn {
+          padding: 0.6rem 1rem;
+          font-size: 0.9rem;
+        }
+        
+        .alert {
+          padding: 0.5rem 0.75rem;
+          font-size: 0.85rem;
+        }
+      }
     </style>
   </head>
   <body>
-    <div class="auth-card animate__animated animate__fadeInUp p-4">
+    <div class="container-fluid d-flex align-items-center justify-content-center min-vh-100 p-3">
+    <div class="auth-card animate__animated animate__fadeInUp p-4 w-100">
       <div class="text-center mb-4">
         <i class="bi bi-flower1 fs-1 text-success floating mb-3"></i>
         <h2 class="fw-bold">{% if mode == 'register' %}Create Account{% else %}Welcome Back{% endif %}</h2>
@@ -400,6 +469,7 @@ AUTH_HTML = """
         <p class="mb-0">Don't have an account? <a href="/register" class="text-success">Sign Up</a></p>
         {% endif %}
       </div>
+    </div>
     </div>
     
     <script>
@@ -600,6 +670,189 @@ INDEX_HTML = """
       .footer { color: var(--bs-secondary-color); }
       .form-label { font-weight: 600; }
       
+      /* Mobile-first responsive improvements */
+      @media (max-width: 768px) {
+        .container {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+        
+        .navbar-brand {
+          font-size: 1.1rem;
+        }
+        
+        .navbar-nav .nav-link {
+          padding: 0.5rem 0.75rem;
+        }
+        
+        .display-6 {
+          font-size: 2rem !important;
+        }
+        
+        .kpi-card .card-body {
+          padding: 1rem 0.75rem;
+        }
+        
+        .kpi-card .fs-1 {
+          font-size: 2.5rem !important;
+        }
+        
+        .card-header h6 {
+          font-size: 0.9rem;
+        }
+        
+        .btn {
+          padding: 0.5rem 1rem;
+        }
+        
+        .form-control {
+          padding: 0.5rem 0.75rem;
+        }
+        
+        #chart {
+          height: 250px !important;
+        }
+        
+        .table {
+          font-size: 0.85rem;
+        }
+        
+        .footer {
+          font-size: 0.8rem;
+          padding: 1rem 0;
+        }
+      }
+      
+      @media (max-width: 576px) {
+        .container {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+        
+        .navbar {
+          padding: 0.5rem 1rem;
+        }
+        
+        .navbar-brand {
+          font-size: 1rem;
+        }
+        
+        .navbar-brand span {
+          display: none;
+        }
+        
+        .display-6 {
+          font-size: 1.5rem !important;
+        }
+        
+        .kpi-card .card-body {
+          padding: 0.75rem 0.5rem;
+          flex-direction: column;
+          text-align: center;
+          gap: 0.5rem;
+        }
+        
+        .kpi-card .fs-1 {
+          font-size: 2rem !important;
+          margin: 0;
+        }
+        
+        .text-uppercase.small {
+          font-size: 0.75rem !important;
+        }
+        
+        .card {
+          margin-bottom: 1rem;
+        }
+        
+        .row.g-3 {
+          --bs-gutter-x: 0.75rem;
+          --bs-gutter-y: 0.75rem;
+        }
+        
+        .btn-group-vertical .btn {
+          font-size: 0.85rem;
+        }
+        
+        #chart {
+          height: 200px !important;
+        }
+        
+        .table-responsive {
+          font-size: 0.8rem;
+        }
+        
+        .alert {
+          padding: 0.5rem 0.75rem;
+          font-size: 0.85rem;
+        }
+      }
+      
+      /* Landscape mobile optimization */
+      @media (max-width: 896px) and (orientation: landscape) {
+        .kpi-card .card-body {
+          padding: 0.5rem;
+        }
+        
+        .display-6 {
+          font-size: 1.25rem !important;
+        }
+        
+        .kpi-card .fs-1 {
+          font-size: 1.5rem !important;
+        }
+        
+        #chart {
+          height: 180px !important;
+        }
+      }
+      
+      /* Tablet optimization */
+      @media (min-width: 768px) and (max-width: 1024px) {
+        .container {
+          max-width: 100%;
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+        
+        .display-6 {
+          font-size: 2.25rem !important;
+        }
+        
+        #chart {
+          height: 300px !important;
+        }
+      }
+      
+      /* Touch-friendly improvements */
+      @media (hover: none) and (pointer: coarse) {
+        .btn {
+          min-height: 44px;
+          padding: 0.75rem 1rem;
+        }
+        
+        .form-control {
+          min-height: 44px;
+          padding: 0.75rem;
+        }
+        
+        .card {
+          transition: none;
+        }
+        
+        .card:hover {
+          transform: none;
+        }
+        
+        .kpi-card:hover {
+          transform: none;
+        }
+        
+        .btn-success:hover {
+          transform: none;
+        }
+      }
+      
       /* Smooth transitions for theme changes */
       html, body, .card, .navbar, .btn, .form-control { 
         transition: background-color .3s ease, color .3s ease, border-color .3s ease, transform .3s ease; 
@@ -647,17 +900,24 @@ INDEX_HTML = """
           <i class="bi bi-flower1"></i>
           <span>Farm Dashboard</span>
         </a>
-        <div class="d-flex gap-2 ms-auto align-items-center">
-          <span class="text-light me-2">
-            <i class="bi bi-person-circle me-1"></i>
-            <span class="d-none d-sm-inline">{{ user.username }}</span>
-          </span>
-          <button id="themeToggle" class="btn btn-outline-light btn-sm" type="button">
-            <i class="bi bi-moon-stars me-1"></i><span class="d-none d-sm-inline">Dark</span>
-          </button>
-          <a href="/logout" class="btn btn-outline-light btn-sm">
-            <i class="bi bi-box-arrow-right me-1"></i><span class="d-none d-sm-inline">Logout</span>
-          </a>
+        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="d-flex gap-2 ms-auto align-items-center flex-wrap">
+            <span class="text-light me-2 d-none d-md-inline">
+              <i class="bi bi-person-circle me-1"></i>
+              <span class="d-none d-lg-inline">{{ user.username }}</span>
+            </span>
+            <div class="d-flex gap-2 flex-wrap">
+              <button id="themeToggle" class="btn btn-outline-light btn-sm" type="button">
+                <i class="bi bi-moon-stars me-1"></i><span class="d-none d-md-inline">Dark</span>
+              </button>
+              <a href="/logout" class="btn btn-outline-light btn-sm">
+                <i class="bi bi-box-arrow-right me-1"></i><span class="d-none d-md-inline">Logout</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
@@ -668,21 +928,21 @@ INDEX_HTML = """
       <div class="card mb-3">
         <div class="card-body">
           <form id="query-form" class="row g-3">
-            <div class="col-md-4">
+            <div class="col-12 col-sm-6 col-lg-4">
               <label class="form-label">Sensor</label>
               <input type="text" class="form-control" id="sensor" placeholder="e.g. soil_moisture" list="sensor-list" required>
               <datalist id="sensor-list"></datalist>
             </div>
-            <div class="col-md-3">
+            <div class="col-12 col-sm-6 col-lg-3">
               <label class="form-label">Location (optional)</label>
               <input type="text" class="form-control" id="location" placeholder="e.g. field-1" list="location-list">
               <datalist id="location-list"></datalist>
             </div>
-            <div class="col-md-2">
+            <div class="col-6 col-sm-4 col-lg-2">
               <label class="form-label">Hours</label>
               <input type="number" class="form-control" id="hours" value="24" min="1" max="720">
             </div>
-            <div class="col-md-3 d-flex align-items-end">
+            <div class="col-6 col-sm-8 col-lg-3 d-flex align-items-end">
               <button type="submit" class="btn btn-success w-100">Load Chart</button>
             </div>
           </form>
@@ -691,43 +951,43 @@ INDEX_HTML = """
 
       <!-- KPI Cards -->
       <div class="row g-3 mb-4">
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-sm-6 col-lg-4">
           <div class="card kpi-card border-0 animate__animated" id="kpi-moisture-card">
             <div class="card-body d-flex align-items-center justify-content-between">
-              <div>
+              <div class="flex-grow-1">
                 <div class="text-uppercase small text-muted fw-bold">Soil Moisture</div>
                 <div class="display-6 fw-semibold pulse-value" id="kpi-soil_moisture">--</div>
               </div>
-              <i class="bi bi-droplet-half fs-1 text-success floating"></i>
+              <i class="bi bi-droplet-half fs-1 text-success floating flex-shrink-0"></i>
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-sm-6 col-lg-4">
           <div class="card kpi-card border-0 animate__animated" id="kpi-temperature-card">
             <div class="card-body d-flex align-items-center justify-content-between">
-              <div>
+              <div class="flex-grow-1">
                 <div class="text-uppercase small text-muted fw-bold">Temperature</div>
                 <div class="display-6 fw-semibold pulse-value" id="kpi-temperature">--</div>
               </div>
-              <i class="bi bi-thermometer-half fs-1 text-danger floating" style="animation-delay: 0.5s;"></i>
+              <i class="bi bi-thermometer-half fs-1 text-danger floating flex-shrink-0" style="animation-delay: 0.5s;"></i>
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-sm-12 col-lg-4">
           <div class="card kpi-card border-0 animate__animated" id="kpi-humidity-card">
             <div class="card-body d-flex align-items-center justify-content-between">
-              <div>
+              <div class="flex-grow-1">
                 <div class="text-uppercase small text-muted fw-bold">Humidity</div>
                 <div class="display-6 fw-semibold pulse-value" id="kpi-humidity">--</div>
               </div>
-              <i class="bi bi-wind fs-1 text-primary floating" style="animation-delay: 1s;"></i>
+              <i class="bi bi-wind fs-1 text-primary floating flex-shrink-0" style="animation-delay: 1s;"></i>
             </div>
           </div>
         </div>
       </div>
 
       <div class="row g-3">
-        <div class="col-lg-4">
+        <div class="col-12 col-xl-4 order-2 order-xl-1">
           <div class="card h-100">
             <div class="card-header bg-success text-white">
               <h6 class="mb-0">📊 Latest Readings</h6>
@@ -740,7 +1000,7 @@ INDEX_HTML = """
             </div>
           </div>
         </div>
-        <div class="col-lg-8">
+        <div class="col-12 col-xl-8 order-1 order-xl-2">
           <div class="card h-100">
             <div class="card-header bg-success text-white">
               <h6 class="mb-0">📈 Time Series</h6>
@@ -750,7 +1010,9 @@ INDEX_HTML = """
                 <div class="spinner-border spinner-border-sm text-success" role="status"></div>
                 <span>Preparing chart...</span>
               </div>
-              <canvas id="chart" height="120" class="d-none"></canvas>
+              <div class="position-relative" style="height: 300px;">
+                <canvas id="chart" class="d-none w-100 h-100"></canvas>
+              </div>
             </div>
           </div>
         </div>
@@ -913,6 +1175,10 @@ INDEX_HTML = """
                 duration: 600,
                 easing: 'easeOutQuart'
               },
+              interaction: {
+                intersect: false,
+                mode: 'index'
+              },
               scales: { 
                 x: { 
                   type: 'time', 
@@ -921,15 +1187,31 @@ INDEX_HTML = """
                     displayFormats: {
                       hour: 'MMM dd HH:mm'
                     }
-                  } 
+                  },
+                  ticks: {
+                    maxTicksLimit: window.innerWidth < 768 ? 4 : 8
+                  }
                 },
                 y: {
-                  beginAtZero: false
+                  beginAtZero: false,
+                  ticks: {
+                    maxTicksLimit: window.innerWidth < 768 ? 5 : 8
+                  }
                 }
               },
               plugins: {
                 legend: {
-                  display: true
+                  display: true,
+                  position: window.innerWidth < 768 ? 'bottom' : 'top'
+                },
+                tooltip: {
+                  mode: 'index',
+                  intersect: false,
+                  backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                  titleColor: 'white',
+                  bodyColor: 'white',
+                  borderColor: '#198754',
+                  borderWidth: 1
                 }
               }
             }
@@ -1017,6 +1299,17 @@ INDEX_HTML = """
         if (sensor) loadSeries(sensor, hours, location);
       });
 
+      // Handle responsive chart updates
+      function updateChartResponsiveness() {
+        if (chart) {
+          const isMobile = window.innerWidth < 768;
+          chart.options.scales.x.ticks.maxTicksLimit = isMobile ? 4 : 8;
+          chart.options.scales.y.ticks.maxTicksLimit = isMobile ? 5 : 8;
+          chart.options.plugins.legend.position = isMobile ? 'bottom' : 'top';
+          chart.update('none');
+        }
+      }
+
       // Initialize with staggered animations
       document.addEventListener('DOMContentLoaded', () => {
         // Animate KPI cards first
@@ -1034,6 +1327,9 @@ INDEX_HTML = """
           const brandIcon = document.querySelector('.navbar-brand i');
           if (brandIcon) brandIcon.classList.add('floating');
         }, 1500);
+        
+        // Handle window resize for responsive chart
+        window.addEventListener('resize', updateChartResponsiveness);
       });
       
       checkHealth();
